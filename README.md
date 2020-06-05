@@ -1,5 +1,7 @@
 # TabbedApplication
 
+This is a sample application which demonstrates how to dynamically load Angular components, and create dynamic tabs
+ at runtime. 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
