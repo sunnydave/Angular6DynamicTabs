@@ -1,0 +1,28 @@
+<p>Sales Person</p>
+<!--<form>-->
+<!--  <div class="form-group form-inline">-->
+<!--    Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>-->
+<!--  </div>-->
+<!--</form>-->
+<button type="submit" class="btn btn-primary" (click)="addNewSalesPerson()">Add Sales Person</button>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let salesPerson of salesPeople index as i">
+    <th scope="row" (click)="selectSalesPerson(i)">{{salesPerson._id}}</th>
+    <td>
+      <!--      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">-->
+      <ngb-highlight [result]="salesPerson.name"></ngb-highlight>
+    </td>
+    <td>
+      <ngb-highlight [result]="salesPerson.email"></ngb-highlight>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<p>{{pageTitle}}</p>
+<div class="row">
+  <div class="col">
+    <form [formGroup]="customerForm" (ngSubmit)="onSaveCustomer()"
+          class="px-4 py-3">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name" required>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!customerForm.valid">Save</button>
+    </form>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+<p>Customers</p>
+<!--<form>-->
+<!--  <div class="form-group form-inline">-->
+<!--    Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>-->
+<!--  </div>-->
+<!--</form>-->
+<button type="submit" class="btn btn-primary" (click)="addNewCustomer()">Add Customer</button>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers; index as i">
+    <th scope="row" (click)="selectCustomer(i)">{{customer._id}}</th>
+    <td>
+      <!--      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">-->
+      <ngb-highlight [result]="customer.name"></ngb-highlight>
+    </td>
+  </tr>
+  </tbody>
+</table>

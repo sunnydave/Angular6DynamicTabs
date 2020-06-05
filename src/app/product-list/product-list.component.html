@@ -1,0 +1,28 @@
+<p>Products</p>
+<!--<form>-->
+<!--  <div class="form-group form-inline">-->
+<!--    Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>-->
+<!--  </div>-->
+<!--</form>-->
+<button type="submit" class="btn btn-primary" (click)="addNewProduct()">Create Product</button>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <th scope="row" (click)="selectProduct(i)">{{product._id}}</th>
+    <td>
+<!--      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">-->
+      <ngb-highlight [result]="product.name" [term]="filter.value"></ngb-highlight>
+    </td>
+    <td><ngb-highlight [result]="product.description" [term]="filter.value"></ngb-highlight></td>
+    <td><ngb-highlight [result]="product.price | currency" [term]="filter.value"></ngb-highlight></td>
+  </tr>
+  </tbody>
+</table>
