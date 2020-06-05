@@ -11,10 +11,10 @@ export class CustomersService {
   }
 
   getCustomers() {
-    return this.http.get('http://localhost:3000/customers');
+    return this.http.get('https://nerdy-sales-backend.herokuapp.com/customers');
   }
 
   saveCustomer(customer: Customer){
-    return this.http.post('http://localhost:3000/customer', customer);
+    return this.http.post('https://nerdy-sales-backend.herokuapp.com/customer', customer);
   }
 }

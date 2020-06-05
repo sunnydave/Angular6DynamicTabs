@@ -10,11 +10,11 @@ export class ProductsService {
   }
 
   getProducts() {
-    return this.http.get('http://localhost:3000/products');
+    return this.http.get('https://nerdy-sales-backend.herokuapp.com/products');
   }
 
   saveProduct(product: Product){
     console.log(product);
-    return this.http.post('http://localhost:3000/product', product);
+    return this.http.post('https://nerdy-sales-backend.herokuapp.com/product', product);
   }
 }
